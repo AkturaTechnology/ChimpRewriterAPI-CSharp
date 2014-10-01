@@ -83,6 +83,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\testarticle2.txt" />
     <Content Include="bin\Debug\testarticle.txt" />
+    <Content Include="ChimpRewriterAPI.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
