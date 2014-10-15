@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace SpinChimpAPISample
+namespace ChimpRewriterAPISample
 {
     class Program
     {
@@ -12,10 +12,9 @@ namespace SpinChimpAPISample
             // Short identifier for your app, so we  know where the requests are coming from
             // This may be used for special deals, if your app attracts lots of
             // users to Chimp Rewriter
-
             ChimpRewriterAPI.ChimpRewriterAPI.AppID = "YOUR_APP_NAME_HERE";
-            string email = "myemail@example.com";
-            string apikey = "APIKEYHERE";
+            string email = "test@example.com";
+            string apikey = "YOUR_API_KEY";
             string text;
 
             // Load in an article
@@ -30,17 +29,6 @@ namespace SpinChimpAPISample
             var protectedTerms = new List<string>();
             protectedTerms.Add("You spin me right round baby, right round");
             
-
-            //*******************
-            // Test Connection
-            //*******************
-            var connectionResult = ChimpRewriterAPI.ChimpRewriterAPI.TestConnection();
-            if (connectionResult != "OK")
-            {
-                Console.WriteLine("API connection failed because of: " + connectionResult);
-                return;
-            }
-
             //*******************
             // Chimp Rewrite! (Simple)
             //*******************

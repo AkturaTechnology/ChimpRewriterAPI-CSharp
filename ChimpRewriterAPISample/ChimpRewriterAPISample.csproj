@@ -48,9 +48,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ChimpRewriterAPI">
-      <HintPath>..\ChimpRewriterAPI\bin\Debug\ChimpRewriterAPI.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
@@ -83,7 +80,12 @@
   <ItemGroup>
     <Content Include="bin\Debug\testarticle2.txt" />
     <Content Include="bin\Debug\testarticle.txt" />
-    <Content Include="ChimpRewriterAPI.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChimpRewriterAPI\ChimpRewriterAPI.csproj">
+      <Project>{2f4e05e6-b9a8-4a95-a482-43a78b42b74b}</Project>
+      <Name>ChimpRewriterAPI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,7 +10,7 @@ namespace ChimpRewriterAPI
 {
     public static class ChimpRewriterAPI
     {
-        public static readonly string ApiURL = "http://api.chimprewriter.com/";
+        public static readonly string ApiURL = "https://api.chimprewriter.com/";
         /// <summary>
         /// Application ID. Set this to a string (100 characters or less) to identify your application to the server
         /// </summary>
@@ -132,17 +132,6 @@ namespace ChimpRewriterAPI
             return _serialiser.Deserialize<APIStats>(jsonResult);
         }
 
-        /// <summary>
-        /// Verifies that the API can be reached
-        /// </summary>
-        /// <returns></returns>
-        public static string TestConnection()
-        {
-            var parameters = new NameValueCollection();
-            var jsonResult = makeRequest("TestConnection", parameters);
-            return _serialiser.Deserialize<string>(jsonResult);
-        }
-
         private static string makeRequest(string method, NameValueCollection values)
         {
             var webClient = new WebClient();
@@ -168,6 +157,11 @@ namespace ChimpRewriterAPI
         /// </summary>
         public string output;
 
+        public APIResult()
+        {
+            status = "";
+            output = "";
+        }
         public APIResult(string status, string output)
         {
             this.status = status;
@@ -194,6 +188,11 @@ namespace ChimpRewriterAPI
         public int usedtoday = 0;
         public int usedthismonth = 0;
         public int usedever = 0;
+
+        public APIStats()
+        {
+            
+        }
 
         public APIStats(int remainingthismonth, int prolimit, string proexpiry, int apilimit, string apiexpiry, string error, int usedtoday, int usedthismonth, int usedever)
         {
